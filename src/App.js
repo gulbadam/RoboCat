@@ -4,8 +4,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Card from "./components/Card";
-import {robots} from './robots';
+//import {robots} from './robots';
 import SearchBox from './components/SearchBox'
+import Scroll from "./components/Scroll"
 
 import Cardlist from "./components/Cardlist";
 // const state ={
@@ -20,9 +21,16 @@ import './App.css';
    constructor() {
      super()
      this.state = {
-       robots: robots,
+       robots: [],
        searchfield: ""
      }
+   }
+   componentDidMount(){
+     fetch('https://jsonplaceholder.typicode.com/users').
+     then(response =>  response.json())
+     .then(users => this.setState({robots: users})
+     )
+    
    }
    onSearchChange=(event)=> {
      this.setState({searchfield: event.target.value})
@@ -33,13 +41,20 @@ import './App.css';
        return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
      })
      //console.log(filterRobots);
+     if (this.state.robots.lenght ===0) {
+       return <h1>loading</h1>
+     }else{
      return(
   <div className="tc">
          <h1 className="bg-washed-red self-center f1  pa3 mh5 shadow-3 hover-bg-gold">Cats</h1>
   <SearchBox searchChange={this.onSearchChange} />
+  <Scroll>
   <Cardlist robots={filteredRobots}/>
+     </Scroll>
+
     </div>
      )
+    }
 }
  }
 //class App extends Component {

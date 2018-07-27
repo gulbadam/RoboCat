@@ -1,9 +1,9 @@
 //import React, { Component } from 'react';
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import Card from "./components/Card";
+//import Card from "./components/Card";
 //import {robots} from './robots';
 import SearchBox from './components/SearchBox'
 import Scroll from "./components/Scroll"

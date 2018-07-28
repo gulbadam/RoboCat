@@ -1,13 +1,10 @@
-
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import './App.css';
 import SearchBox from './components/SearchBox'
 import Scroll from "./components/Scroll"
-
 import Cardlist from "./components/Cardlist";
 import './App.css';
-
 import {setSearchField, requestRobots} from './actions';
 const mapStateToProps = (state) => {
   return {
@@ -17,7 +14,6 @@ const mapStateToProps = (state) => {
    error: state.requestRobots.error
   };
 };
-
 const mapDispatchToProps = (dispatch) => {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),

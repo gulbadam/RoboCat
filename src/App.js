@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import './App.css';
-import SearchBox from './components/SearchBox'
+import SearchBox from './components/SearchBox';
 import Scroll from "./components/Scroll"
 import Cardlist from "./components/Cardlist";
+import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 import {setSearchField, requestRobots} from './actions';
 const mapStateToProps = (state) => {
@@ -35,7 +36,9 @@ class App extends Component {
       <h1 className=" self-center f1  pa3 mh5 shadow-3 hover-bg-gold">Cats</h1>
   <SearchBox searchChange={onSearchChange} />
   <Scroll>
+  <ErrorBoundary>
   <Cardlist robots={filteredRobots}/>
+  </ErrorBoundary>
   </Scroll>
 </div>)
 }

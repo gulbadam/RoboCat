@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import Cardlist from './Cardlist';
 it('expect to render Card Component', () => {
     
-    expect(shallow( < Cardlist /> ).length).toEqual(1)
+    expect(shallow( <Cardlist /> ).length).toEqual(1)
 });
 it('expect to render Card snp', () => {
     const mockRobots = [{
@@ -12,5 +12,5 @@ it('expect to render Card snp', () => {
         username: 'gulbadam',
         email: 'gulbadam@gulbada.com'
     }]
-    expect(shallow( < Cardlist robots = {mockRobots}  /> )).toMatchSnapshot();
+    expect(shallow( <Cardlist robots = {mockRobots}/> )).toMatchSnapshot();
 });

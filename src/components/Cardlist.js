@@ -18,4 +18,4 @@ const Cardlist =({robots})=>
 
 
 
-export default Cardlist
+export default Cardlist;

@@ -56,4 +56,14 @@ describe('requestRobots', () => {
             error: ''
         });
     });
+    it('should handle REQUEST_ROBOTS_FAILED action', () => {
+        expect(reducers.requestRobots(initialStateRobots, {
+            type: REQUEST_ROBOTS_FAILED,
+            payload: "nooooo"
+        })).toEqual({
+            isPending: false,
+            error: 'nooooo',
+            robots: []
+        });
+    });
 });

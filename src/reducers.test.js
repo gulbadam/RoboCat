@@ -8,7 +8,7 @@ import * as reducers from './reducers';
 describe('searchRobots', () => {
     const initialStateSearch ={
         searchField: ''
-    }
+    };
    it('should return the initial state', ()=> {
        expect(reducers.searchRobots(undefined, {})).toEqual({ searchField: ''});
    });
@@ -18,4 +18,14 @@ describe('searchRobots', () => {
            payload: 'abc'
        })).toEqual({ searchField: 'abc'});
    });
+});
+describe('requestRobots', () => {
+    const initialStateRobots = {
+        robots: [],
+        isPending: false,
+        error: ""
+    };
+    it('should return the initial state', () => {
+        expect(reducers.requestRobots(undefined, {})).toEqual(initialStateRobots);
+    });
 });

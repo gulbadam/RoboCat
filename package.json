@@ -32,7 +32,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "css": "tachyons src/style/Card.css > src/index.css --minify",
-    "pre-commit": "pretty-quick --staged"
+    "husky": {
+      "hooks": {
+        "pre-commit": "pretty-quick --staged"
+      }
+    }
   },
   "devDependencies": {
     "enzyme": "^3.3.0",

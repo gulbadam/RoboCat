@@ -31,10 +31,14 @@
     "gh-pages": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "css": "tachyons src/style/Card.css > src/index.css --minify"
+    "css": "tachyons src/style/Card.css > src/index.css --minify",
+    "pre-commit": "pretty-quick --staged"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "next",
+    "prettier": "1.14.2",
+    "pretty-quick": "^1.6.0"
   }
 }

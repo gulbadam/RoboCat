@@ -10,7 +10,7 @@ jobs:
       - run: CI=true yarn build
   test:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
-      - image: circleci/node:8.10
+      - image: circleci/node:7.10
     steps:
         - checkout
         - run: echo "test"
@@ -18,7 +18,7 @@ jobs:
         - run: yarn test
   hithere:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
-      - image: circleci/node:8.10
+      - image: circleci/node:7.10
     steps:
       - checkout
       - run: echo "hello"

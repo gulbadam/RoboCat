@@ -1,20 +1,34 @@
 version: 2
 jobs:
-  ada:
+  build:
     docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
-      - image: circleci/ruby:2.4.1-jessie
+      - image: circleci/node:8.10
     steps:
       - checkout
-      - run: echo "A first hello"
-  jackson:
-      docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
-        - image: circleci/ruby:2.4.1-jessie
-      steps:
+      - run: echo "yarn install"
+      - run: yarn install
+      - run: CI=true yarn build
+  test:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/node:8.10
+    steps:
         - checkout
-        - run: echo "Double trouble"
+        - run: echo "test"
+        - run: yarn install
+        - run: yarn test
+  hithere:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/node:8.10
+    steps:
+      - checkout
+      - run: echo "hello"
 workflows:
   version: 2
-  ada_jackson:
+  build_test_and_lint:
     jobs:
-      - ada
-      - jackson
+      - build
+      - hithete
+      - test:
+          requires:
+            - hithere
+       

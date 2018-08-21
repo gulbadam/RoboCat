@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  ada:
+    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+      - image: circleci/ruby:2.4.1-jessie
+    steps:
+      - checkout
+      - run: echo "A first hello"
+    jackson:
+      docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+        - image: circleci/ruby:2.4.1-jessie
+      steps:
+        - checkout
+        - run: echo "Double trouble"
+    workflows:
+      version: 2
+      ada_jackson:
+      jobs:
+        - ada
+        - jackson

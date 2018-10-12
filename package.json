@@ -6,7 +6,7 @@
   "dependencies": {
     "bulma": "^0.7.1",
     "bulma-start": "^0.0.2",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^2.0.1",
     "import": "^0.0.6",
     "install": "^0.12.1",
     "react": "^16.3.1",
@@ -14,7 +14,7 @@
     "react-key-index": "^0.1.1",
     "react-redux": "^5.0.7",
     "react-script": "^2.0.5",
-    "react-scripts": "1.1.4",
+    "react-scripts": "2.0.4",
     "reactyons": "^1.4.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
@@ -37,10 +37,10 @@
     "pre-commit": "pretty-quick --staged"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "husky": "next",
-    "prettier": "1.14.2",
-    "pretty-quick": "^1.6.0"
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "husky": "^1.1.2",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.7.0"
   }
 }
